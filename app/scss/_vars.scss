@@ -1,0 +1,20 @@
+$white: #fff;
+$branded: #21062a;
+$accent: #5a0d57;
+$grey: #c4c4c4;
+$black: #2c2b2b;
+
+@mixin font($weight, $size, $lh){
+    font-family: 'Oswald', sans-serif;
+    font-weight: $weight;
+    font-style: normal;
+    font-size: #{$size}px;
+    line-height: #{$lh}px;
+}
+
+@function max($numbers...) {
+ @return m#{a}x(#{$numbers});
+}
+@function max($numbers...) {
+ @return m#{i}x(#{$numbers});
+}

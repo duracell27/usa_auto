@@ -1,0 +1,187 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+
+.header {
+  background-image: url(../images/header_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  min-height: 700px;
+  color: $white;
+  &__top {
+    padding: 47px 0 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    padding-top: 60px;
+    position: relative;
+  }
+
+  &__title {
+    @include font(400, 72, 107);
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    margin-bottom: 30px;
+    @include font(400, 36, 54);
+  }
+
+  &__text {
+    @include font(300, 18, 27);
+    max-width: 800px;
+    margin-bottom: 30px;
+  }
+
+  &__social {
+    padding: 70px 0 20px 65px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__social-link {
+    margin-right: 10px;
+  }
+
+  &__images {
+    position: absolute;
+    right: 0;
+    bottom: -280px;
+  }
+}
+
+.phone {
+  @include font(400, 36, 54);
+}
+.button {
+  @include font(300, 14, 21);
+  background-color: $accent;
+  text-transform: uppercase;
+  padding: 14px 54px 15px;
+  transition: all 0.5s ease;
+  &:hover {
+    background-color: $white;
+    color: $accent;
+  }
+}
+
+.services {
+  padding-top: 350px;
+  &__inner {
+    display: flex;
+    margin-bottom: 100px;
+  }
+
+  &__content {
+    max-width: 505px;
+    margin-right: 96px;
+  }
+
+  &__content-title {
+    color: $accent;
+    @include font(300, 18, 27);
+    margin-bottom: 12px;
+  }
+
+  &__content-textbox {
+    margin-bottom: 57px;
+  }
+
+  &__content-text {
+    @include font(300, 18, 27);
+    margin-bottom: 12px;
+  }
+
+  &__list {
+    list-style: none;
+    counter-reset: myCounter;
+  }
+
+  &__item {
+    border: 1px solid $grey;
+    margin-bottom: 12px;
+    width: 450px;
+    padding: 10px 15px 10px 113px;
+    counter-increment: myCounter;
+    position: relative;
+    transition: all .5s ease;
+    &::before {
+      content: "0" counter(myCounter);
+      transform: rotate(-90deg);
+      position: absolute;
+      top: 10px;
+      left: 40px;
+      @include font(400, 36, 54);
+      color: $grey;
+      transition: all .5s ease;
+    }
+    &:hover{
+        border: 1px solid $accent;
+        width: 500px;
+        .service__item-title{
+            color: $accent
+        }
+        &::before{
+            color: $accent;
+        }
+    }
+  }
+
+  &__item-title {
+    @include font(300, 24, 35);
+    color: $black;
+  }
+
+  &__item-text {
+    @include font(300, 18, 27);
+    color: $black;
+  }
+}
+
+.title {
+  color: $branded;
+  @include font(400, 36, 54);
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background-color: $branded;
+    right: -100px;
+    top: 20px;
+  }
+}
+
+.button--decor {
+  margin-top: -7px;
+  color: $white;
+  border: 1px solid $accent;
+  position: relative;
+  &::after {
+    content: "ЖМИ";
+    position: absolute;
+    @include font(300, 14, 21);
+    color: $grey;
+    margin-left: 140px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    color: $grey;
+    background-color: $grey;
+    width: 80px;
+    height: 2px;
+    right: -70px;
+    top: 24px;
+  }
+}
