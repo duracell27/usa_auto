@@ -39,21 +39,23 @@
     margin-bottom: 30px;
   }
 
-  &__social {
-    padding: 70px 0 20px 65px;
-    display: flex;
-    align-items: center;
-  }
-
-  &__social-link {
-    margin-right: 10px;
-  }
-
   &__images {
     position: absolute;
     right: 0;
     bottom: -280px;
   }
+  &__social {
+    padding: 70px 0 20px 60px;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+}
+
+.social__link {
+  margin: 0 5px;
 }
 
 .phone {
@@ -110,7 +112,7 @@
     padding: 10px 15px 10px 113px;
     counter-increment: myCounter;
     position: relative;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     &::before {
       content: "0" counter(myCounter);
       transform: rotate(-90deg);
@@ -119,17 +121,17 @@
       left: 40px;
       @include font(400, 36, 54);
       color: $grey;
-      transition: all .5s ease;
+      transition: all 0.5s ease;
     }
-    &:hover{
-        border: 1px solid $accent;
-        width: 500px;
-        .service__item-title{
-            color: $accent
-        }
-        &::before{
-            color: $accent;
-        }
+    &:hover {
+      border: 1px solid $accent;
+      width: 500px;
+      .service__item-title {
+        color: $accent;
+      }
+      &::before {
+        color: $accent;
+      }
     }
   }
 
@@ -184,4 +186,194 @@
     right: -70px;
     top: 24px;
   }
+}
+
+.benefits {
+  margin-bottom: 100px;
+  &__inner {
+    display: flex;
+  }
+
+  &__images {
+    margin-right: 95px;
+  }
+
+  &__content {
+    width: 100%;
+    color: $white;
+  }
+  &__title {
+    margin-left: 185px;
+  }
+
+  &__list {
+    list-style-type: none;
+    background-color: $branded;
+    padding: 25px 0 25px 185px !important;
+  }
+
+  &__list-item {
+    width: 320px;
+    margin-bottom: 20px;
+  }
+
+  &__item-num {
+    @include font(400, 36, 54);
+  }
+  &__item-title {
+    @include font(300, 24, 36);
+  }
+  &__item-text {
+    color: $grey;
+    @include font(300, 18, 27);
+  }
+}
+
+.carousel {
+  margin-bottom: 100px;
+  &__inner {
+  }
+
+  &__item {
+  }
+  &__item-box {
+    border: 1px solid $grey;
+    padding: 6px 6px 16px 6px;
+    // margin: 0 7px;
+    text-align: center;
+    transition: all 0.5s ease;
+    &:hover {
+      color: $white;
+      background-color: $accent;
+      border-color: $accent;
+    }
+  }
+
+  &__item-img {
+    max-width: 100%;
+    margin-bottom: 23px;
+  }
+
+  &__item-title {
+    @include font(300, 18, 27);
+    margin-bottom: 5px;
+  }
+
+  &__item-text {
+    @include font(300, 18, 27);
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    button {
+      font-size: 0;
+      border: none;
+      outline: none;
+      margin: 0 10px;
+      width: 50px;
+      background-color: $grey;
+      padding: 0;
+      height: 1px;
+    }
+  }
+  .slick-active {
+    button {
+      background-color: $accent;
+      height: 3px;
+    }
+  }
+  .slick-slide {
+    margin: 0 7px;
+  }
+  
+  .slick-list {
+    margin-left: -7px;
+    margin-right: -7px;
+  }
+}
+
+.contacts {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__item-title {
+    color: $accent;
+  }
+
+  &__item-text {
+  }
+
+  &__form {
+    background-color: $branded;
+    padding: 50px 70px 57px;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  &__title {
+    color: $white;
+    margin-bottom: 16px;
+    margin-left: 53px;
+    &::after {
+      background-color: $white;
+    }
+  }
+
+  &__input {
+    background-color: transparent;
+    width: 100%;
+    height: 75px;
+    color: $white;
+    border: 1px solid $white;
+    margin-bottom: 12px;
+    padding: 0 15px;
+    text-align: center;
+    @include font(300, 24, 24);
+    display: block;
+    &::placeholder {
+      text-align: center;
+      @include font(300, 18, 27);
+      color: $grey;
+      font-family: "oswald", serif;
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    color: $white;
+    margin-top: 78px;
+    cursor: pointer;
+  }
+}
+
+.footer {
+    background-color: $branded;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $white;
+        height: 100px;
+    }
+
+    // .footer__copy
+
+    &__copy {
+        @include font(300, 18, 27);
+    }
 }
